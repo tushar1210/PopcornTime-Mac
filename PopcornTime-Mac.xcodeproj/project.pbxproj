@@ -24,6 +24,7 @@
 		30D9C66524B271D8009F65A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30D9C66824B271D8009F65A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30D9C66A24B271D8009F65A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30D9C67024B271E1009F65A8 /* PopcornTime-Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PopcornTime-Mac.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 		30D9C65B24B271D5009F65A8 /* PopcornTime-Mac */ = {
 			isa = PBXGroup;
 			children = (
+				30D9C67024B271E1009F65A8 /* PopcornTime-Mac.entitlements */,
 				30D9C65C24B271D5009F65A8 /* AppDelegate.swift */,
 				30D9C65E24B271D5009F65A8 /* SceneDelegate.swift */,
 				30D9C66024B271D5009F65A8 /* ViewController.swift */,
@@ -284,6 +286,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "PopcornTime-Mac/PopcornTime-Mac.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2J3WW2KWBU;
 				INFOPLIST_FILE = "PopcornTime-Mac/Info.plist";
@@ -293,8 +296,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aritropaul.PopcornTime-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -302,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "PopcornTime-Mac/PopcornTime-Mac.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2J3WW2KWBU;
 				INFOPLIST_FILE = "PopcornTime-Mac/Info.plist";
@@ -311,8 +316,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aritropaul.PopcornTime-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
