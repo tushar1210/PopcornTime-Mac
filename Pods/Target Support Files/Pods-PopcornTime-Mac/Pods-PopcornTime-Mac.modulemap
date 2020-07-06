@@ -1,0 +1,6 @@
+framework module Pods_PopcornTime_Mac {
+  umbrella header "Pods-PopcornTime-Mac-umbrella.h"
+
+  export *
+  module * { export * }
+}
