@@ -1,8 +1,9 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+
+
+source 'https://github.com/CocoaPods/Specs'
+source 'https://github.com/PopcornTimeTV/Specs'
 
 target 'PopcornTime-Mac' do
-  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
   # Pods for PopcornTime-Mac
@@ -10,4 +11,5 @@ target 'PopcornTime-Mac' do
   pod 'Kingfisher'
   pod 'Just' 
   pod 'Just' 
+  pod 'PopcornTorrent' 
 end

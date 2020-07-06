@@ -1,22 +1,34 @@
 PODS:
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
   - Just (0.8.0)
   - Kingfisher (5.13.4):
     - Kingfisher/Core (= 5.13.4)
   - Kingfisher/Core (5.13.4)
+  - PopcornTorrent (1.3.15):
+    - GCDWebServer (~> 3.5.0)
 
 DEPENDENCIES:
   - Just
   - Kingfisher
+  - PopcornTorrent
 
 SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - GCDWebServer
+  https://github.com/PopcornTimeTV/Specs:
+    - PopcornTorrent
   trunk:
     - Just
     - Kingfisher
 
 SPEC CHECKSUMS:
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   Just: aef5105fb2c7069b65aa6f21aec8f429057f9c19
   Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
+  PopcornTorrent: 343ff0e04ba370764a9cf27c35685463f7428b90
 
-PODFILE CHECKSUM: ff14d4700c0df0284fa4851d8c64e6a2f67e6655
+PODFILE CHECKSUM: ff25091255e6fc43a011f0bd535f8e741a96ce89
 
 COCOAPODS: 1.9.1
