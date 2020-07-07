@@ -88,4 +88,12 @@ class MoviesViewController: UICollectionViewController, UICollectionViewDelegate
         return CGSize(width: 150, height: 260)
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = movies[indexPath.item]
+        let movieVC : MovieDetailViewController = .instantiate(from: .main)
+        movieVC.movie = movie
+        movieVC.modalPresentationStyle = .fullScreen
+        self.present(movieVC, animated: true)
+    }
+    
 }

@@ -9,7 +9,5 @@ target 'PopcornTime-Mac' do
   # Pods for PopcornTime-Mac
 
   pod 'Kingfisher'
-  pod 'Just' 
-  pod 'Just' 
-  pod 'PopcornTorrent' 
+  pod 'Just'  
 end

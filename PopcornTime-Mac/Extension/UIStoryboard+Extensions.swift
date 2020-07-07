@@ -23,8 +23,6 @@ extension UIViewController: Identifiable {}
 
 enum Storyboard: String {
     case main = "Main"
-    case login = "Login"
-    case settings = "Settings"
 }
 
 extension UIViewController {
