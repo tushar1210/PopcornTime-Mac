@@ -77,4 +77,22 @@ class ShowsViewController: UICollectionViewController {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
       return CGSize(width: 150, height: 260)
   }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedShow = shows[indexPath.item]
+        ShowManager.shared.loadShow(withID: selectedShow.id ?? "") { (result) in
+            switch result {
+            case .success(let show):
+                DispatchQueue.main.async {
+                    let showVC : ShowDetailViewController = .instantiate(from: .main)
+                    showVC.show = show
+                    showVC.modalPresentationStyle = .fullScreen
+                    self.present(showVC, animated: true)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
 }

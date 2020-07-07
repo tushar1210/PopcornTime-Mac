@@ -24,7 +24,18 @@ class ShowManager {
                 completion(.failure(r.error!))
             }
         }
-        
+    }
+    
+    func loadShow(withID id: String, completion: @escaping(Result<ShowDetail, Error>) -> Void) {
+        Just.get(Endpoints.Show.show+id) { (r) in
+            if r.ok {
+                let show = try! JSONDecoder().decode(ShowDetail.self, from: r.content!)
+                completion(.success(show))
+            }
+            else {
+                completion(.failure(r.error!))
+            }
+        }
     }
     
 }

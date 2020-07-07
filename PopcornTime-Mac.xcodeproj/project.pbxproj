@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3056857B24B4A9660097BC64 /* PopcornTorrent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3056857A24B4A9650097BC64 /* PopcornTorrent.framework */; platformFilter = maccatalyst; };
 		3056857C24B4A9660097BC64 /* PopcornTorrent.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3056857A24B4A9650097BC64 /* PopcornTorrent.framework */; platformFilter = maccatalyst; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3056BE7B24B4D03B0097BC64 /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056BE7A24B4D03B0097BC64 /* ShowDetailViewController.swift */; };
+		3056BE7D24B50FCC0097BC64 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3056BE7C24B50FCC0097BC64 /* EpisodeTableViewCell.swift */; };
 		306669DD24B3111100DBCFB9 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306669DC24B3111100DBCFB9 /* MoviesViewController.swift */; };
 		306669DF24B3200D00DBCFB9 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306669DE24B3200D00DBCFB9 /* MovieModel.swift */; };
 		306669E224B321CD00DBCFB9 /* MovieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306669E124B321CD00DBCFB9 /* MovieManager.swift */; };
@@ -47,6 +49,8 @@
 		3056857324B4A8E80097BC64 /* PopcornTorrent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PopcornTorrent.framework; path = ../../../../Desktop/PopcornTorrent.framework; sourceTree = "<group>"; };
 		3056857A24B4A9650097BC64 /* PopcornTorrent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PopcornTorrent.framework; sourceTree = "<group>"; };
 		3056857E24B4AA6E0097BC64 /* GCDWebServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GCDWebServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3056BE7A24B4D03B0097BC64 /* ShowDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
+		3056BE7C24B50FCC0097BC64 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		306669DC24B3111100DBCFB9 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		306669DE24B3200D00DBCFB9 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		306669E124B321CD00DBCFB9 /* MovieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieManager.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 		30D4AC3224B356030076C607 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3056BE7A24B4D03B0097BC64 /* ShowDetailViewController.swift */,
 				30D4AC2824B32EC60076C607 /* MenuViewController.swift */,
 				308A14FA24B45C5B009DFA51 /* MovieDetailViewController.swift */,
 				306669DC24B3111100DBCFB9 /* MoviesViewController.swift */,
@@ -145,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				30D4AC2624B327360076C607 /* MovieCollectionViewCell.swift */,
+				3056BE7C24B50FCC0097BC64 /* EpisodeTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,8 +334,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				30D4AC2B24B346670076C607 /* ShowsViewController.swift in Sources */,
+				3056BE7D24B50FCC0097BC64 /* EpisodeTableViewCell.swift in Sources */,
 				30D4AC2F24B348300076C607 /* ShowManager.swift in Sources */,
 				306669DF24B3200D00DBCFB9 /* MovieModel.swift in Sources */,
+				3056BE7B24B4D03B0097BC64 /* ShowDetailViewController.swift in Sources */,
 				30D9C65D24B271D5009F65A8 /* AppDelegate.swift in Sources */,
 				308A14FB24B45C5B009DFA51 /* MovieDetailViewController.swift in Sources */,
 				306669E224B321CD00DBCFB9 /* MovieManager.swift in Sources */,

@@ -13,6 +13,8 @@ class MenuViewController: UITableViewController {
     var moviesVC = MoviesViewController.instantiate(from: .main)
     var showsVC = ShowsViewController.instantiate(from: .main)
     
+    var selectedIndex = 0
+    
     var viewControllers = [UIViewController]()
     
     override func viewDidLoad() {
@@ -30,13 +32,14 @@ class MenuViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.tableView(tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
-        tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .none)
+        self.tableView(tableView, didSelectRowAt: IndexPath(row: selectedIndex, section: 0))
+        tableView.selectRow(at: IndexPath(row: selectedIndex, section: 0), animated: true, scrollPosition: .none)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.backgroundColor = .tertiarySystemFill
+        selectedIndex = indexPath.row
         if let navVC = self.parent as? UINavigationController {
             if let splitVC = navVC.parent as? UISplitViewController {
                 if let detailVC = splitVC.children[1] as? UINavigationController {
