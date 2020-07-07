@@ -26,6 +26,7 @@ class MoviesViewController: UICollectionViewController, UICollectionViewDelegate
     }
     
     @objc func refresh() {
+        page = 1
         loadMovies(atPage: page)
     }
     
@@ -39,7 +40,12 @@ class MoviesViewController: UICollectionViewController, UICollectionViewDelegate
         MovieManager.shared.loadMovies(page: atPage) { (result) in
             switch result {
             case .success(let movies):
-                self.movies = movies
+                if self.page == 1 {
+                 self.movies = movies
+                }
+                else {
+                    self.movies += movies
+                }
                 DispatchQueue.main.async {
                     self.refreshControl.endRefreshing()
                     self.collectionView.reloadData()
@@ -76,6 +82,11 @@ class MoviesViewController: UICollectionViewController, UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "movieCell", for: indexPath) as! MovieCollectionViewCell
         let movie = movies[indexPath.item]
+        if indexPath.item == movies.count - 5 {
+            print(page)
+            page = page + 1
+            loadMovies(atPage: page)
+        }
         cell.moviePoster.kf.setImage(with: URL(string: movie.images?.poster ?? ""))
         cell.moviePoster.layer.cornerRadius = 8
         cell.moviePoster.contentMode = .scaleAspectFit

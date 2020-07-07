@@ -41,12 +41,20 @@ class MovieDetailViewController: UIViewController {
             let playerViewController = AVPlayerViewController()
             let id = movie.trailer?.components(separatedBy: "?v=")[1]
             XCDYouTubeClient.default().getVideoWithIdentifier(id) { (video, error) in
-                guard let video: XCDYouTubeVideo = video else { return }
-                print(video.streamURL)
-                playerViewController.player = AVPlayer(url: video.streamURL)
-                playerViewController.player?.play()
-                self.present(playerViewController, animated: true)
-                
+                if let video : XCDYouTubeVideo = video {
+                    print(video.streamURL)
+                    playerViewController.player = AVPlayer(url: video.streamURL)
+                    playerViewController.player?.play()
+                    self.present(playerViewController, animated: true)
+
+                }
+                else {
+                    if error != nil {
+                        let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                        self.present(alert, animated: true)
+                    }
+                }
             }
         }
     }
