@@ -29,6 +29,7 @@
 		30D9C66624B271D8009F65A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30D9C66524B271D8009F65A8 /* Assets.xcassets */; };
 		30D9C66924B271D8009F65A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30D9C66724B271D8009F65A8 /* LaunchScreen.storyboard */; };
 		44D1D5D474F24C7FA2894E19 /* Pods_PopcornTime_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FCF9298962E8510019E282 /* Pods_PopcornTime_Mac.framework */; platformFilter = ios; };
+		78850E2424B4C142007D4338 /* WatchListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78850E2324B4C142007D4338 /* WatchListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,6 +74,7 @@
 		30D9C67024B271E1009F65A8 /* PopcornTime-Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PopcornTime-Mac.entitlements"; sourceTree = "<group>"; };
 		69A6ED5BDAC08BB9B8276A82 /* Pods-PopcornTime-Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopcornTime-Mac.release.xcconfig"; path = "Target Support Files/Pods-PopcornTime-Mac/Pods-PopcornTime-Mac.release.xcconfig"; sourceTree = "<group>"; };
 		75FCF9298962E8510019E282 /* Pods_PopcornTime_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PopcornTime_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78850E2324B4C142007D4338 /* WatchListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListModel.swift; sourceTree = "<group>"; };
 		A832CF6622917919077E7CEA /* Pods-PopcornTime-Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PopcornTime-Mac.debug.xcconfig"; path = "Target Support Files/Pods-PopcornTime-Mac/Pods-PopcornTime-Mac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 			children = (
 				306669DE24B3200D00DBCFB9 /* MovieModel.swift */,
 				30D4AC2C24B346D00076C607 /* ShowModel.swift */,
+				78850E2324B4C142007D4338 /* WatchListModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				308A14FB24B45C5B009DFA51 /* MovieDetailViewController.swift in Sources */,
 				306669E224B321CD00DBCFB9 /* MovieManager.swift in Sources */,
 				30D4AC2D24B346D00076C607 /* ShowModel.swift in Sources */,
+				78850E2424B4C142007D4338 /* WatchListModel.swift in Sources */,
 				30D4AC3124B34C050076C607 /* UIStoryboard+Extensions.swift in Sources */,
 				306669DD24B3111100DBCFB9 /* MoviesViewController.swift in Sources */,
 				30D4AC2724B327360076C607 /* MovieCollectionViewCell.swift in Sources */,
@@ -495,7 +499,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "PopcornTime-Mac/PopcornTime-Mac.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2J3WW2KWBU;
+				DEVELOPMENT_TEAM = SDDB7WX63J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -521,7 +525,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "PopcornTime-Mac/PopcornTime-Mac.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2J3WW2KWBU;
+				DEVELOPMENT_TEAM = SDDB7WX63J;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
