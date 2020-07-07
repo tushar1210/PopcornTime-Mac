@@ -24,6 +24,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             titlebar.titleVisibility = .hidden
             titlebar.toolbar = nil
         }
+        
+        UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.forEach { windowScene in
+            windowScene.sizeRestrictions?.minimumSize = CGSize(width: 800, height: 600)
+        }
+        
         #endif
     }
 
