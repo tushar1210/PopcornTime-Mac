@@ -10,5 +10,6 @@ target 'PopcornTime-Mac' do
 
   pod 'Kingfisher'
   pod 'Just'  
-  pod 'XCDYouTubeKit' 
+  pod 'XCDYouTubeKit'
+  pod 'GCDWebServer' 
 end

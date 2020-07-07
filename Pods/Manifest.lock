@@ -1,4 +1,7 @@
 PODS:
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
   - Just (0.8.0)
   - Kingfisher (5.13.4):
     - Kingfisher/Core (= 5.13.4)
@@ -6,22 +9,25 @@ PODS:
   - XCDYouTubeKit (2.14.0)
 
 DEPENDENCIES:
+  - GCDWebServer
   - Just
   - Kingfisher
   - XCDYouTubeKit
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - GCDWebServer
     - XCDYouTubeKit
   trunk:
     - Just
     - Kingfisher
 
 SPEC CHECKSUMS:
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   Just: aef5105fb2c7069b65aa6f21aec8f429057f9c19
   Kingfisher: d2279a7abece3c7f25a80cd2b7f363ca5cf3f44c
   XCDYouTubeKit: 04a2f89dca6c5c53d1786701a0e98dcb484be7a8
 
-PODFILE CHECKSUM: 87a322e4d4c593d06ef9e6257b91b70d31e892bb
+PODFILE CHECKSUM: 1ba19c6ce0dec28a8bfdbb0f4e38f9abb6274314
 
 COCOAPODS: 1.9.1

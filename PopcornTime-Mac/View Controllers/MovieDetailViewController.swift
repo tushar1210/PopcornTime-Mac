@@ -19,6 +19,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var synopsisLabel: UILabel!
     @IBOutlet weak var youtubeButton: UIButton!
+    @IBOutlet weak var button2160p: UIButton!
     @IBOutlet weak var button1080p: UIButton!
     @IBOutlet weak var button720p: UIButton!
     @IBOutlet weak var moviePosterView: UIImageView!
@@ -31,6 +32,7 @@ class MovieDetailViewController: UIViewController {
         titleLabel.text = movie.title
         yearLabel.text = movie.year
         synopsisLabel.text = movie.synopsis
+        setupTorrentButtons()
     }
     
     func setupYouTubeURL() {
@@ -58,6 +60,28 @@ class MovieDetailViewController: UIViewController {
             }
         }
     }
+    
+    
+    func setupTorrentButtons() {
+        if let _720p = movie.torrents?.en?["720p"] {
+            //
+        }
+        else {
+            button720p.isHidden = true
+        }
+        if let _1080p = movie.torrents?.en?["1080p"] {
+            //
+        }
+        else {
+            button1080p.isHidden = true
+        }
+        if let _2160p = movie.torrents?.en?["2160p"] {
+            //            
+        }
+        else {
+            button2160p.isHidden = true
+        }
+    }
 
     @IBAction func backTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -68,9 +92,20 @@ class MovieDetailViewController: UIViewController {
     }
     
     @IBAction func _720pTapped(_ sender: Any) {
+        if let _720p = movie.torrents?.en?["720p"] {
+            print(_720p.url)
+        }
     }
     
     @IBAction func _1080pTapped(_ sender: Any) {
+        if let _1080p = movie.torrents?.en?["1080p"] {
+            print(_1080p.url)
+        }
     }
     
+    @IBAction func _2160pTapped(_ sender: Any) {
+        if let _2160p = movie.torrents?.en?["2160p"] {
+            print(_2160p.url)
+        }
+    }
 }
