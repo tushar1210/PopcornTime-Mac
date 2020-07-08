@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iDY-3c-Ih8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iDY-3c-Ih8">
     <device id="mac" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -462,12 +462,60 @@
                                                     <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="p3w-di-I4k">
+                                                    <rect key="frame" x="256" y="18" width="113" height="47"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uX3-81-V2S">
+                                                            <rect key="frame" x="0.0" y="0.0" width="47" height="47"/>
+                                                            <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="uX3-81-V2S" secondAttribute="height" multiplier="1:1" id="oM7-pV-McP"/>
+                                                            </constraints>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                            <state key="normal" image="icloud.and.arrow.down" catalog="system">
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="semibold"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="22"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="downloadTapped:" destination="N9w-h3-KEf" eventType="touchUpInside" id="B2k-7Y-5cN"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ns9-0C-n3D">
+                                                            <rect key="frame" x="67" y="0.0" width="47" height="47"/>
+                                                            <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="ns9-0C-n3D" secondAttribute="height" multiplier="1:1" id="o4x-7V-bx5"/>
+                                                            </constraints>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                            <state key="normal" image="tv" catalog="system">
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="semibold"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="22"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="streamTapped:" destination="N9w-h3-KEf" eventType="touchUpInside" id="Ll8-l4-gfq"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="p3w-di-I4k" secondAttribute="trailing" constant="16" id="4MC-3M-em8"/>
                                                 <constraint firstItem="nhh-VA-zIB" firstAttribute="top" secondItem="LgN-x5-UjE" secondAttribute="bottom" constant="4" id="C1y-8m-SBV"/>
                                                 <constraint firstItem="LgN-x5-UjE" firstAttribute="leading" secondItem="bTy-cg-Un7" secondAttribute="leadingMargin" constant="8" id="REs-w3-3Ai"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="nhh-VA-zIB" secondAttribute="trailing" constant="80" id="lHa-zz-TT2"/>
                                                 <constraint firstItem="LgN-x5-UjE" firstAttribute="top" secondItem="bTy-cg-Un7" secondAttribute="topMargin" constant="8" id="mCh-aQ-E90"/>
                                                 <constraint firstItem="LgN-x5-UjE" firstAttribute="right" secondItem="bTy-cg-Un7" secondAttribute="rightMargin" constant="-8" id="urv-uk-bMB"/>
+                                                <constraint firstItem="p3w-di-I4k" firstAttribute="top" secondItem="bTy-cg-Un7" secondAttribute="topMargin" constant="8" id="wew-3b-hVB"/>
                                                 <constraint firstItem="nhh-VA-zIB" firstAttribute="leading" secondItem="bTy-cg-Un7" secondAttribute="leadingMargin" constant="8" id="wqF-G6-tae"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -700,6 +748,7 @@
         <image name="eye.fill" catalog="system" width="128" height="78"/>
         <image name="film" catalog="system" width="128" height="93"/>
         <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="icloud.and.arrow.down" catalog="system" width="128" height="112"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="play.rectangle.fill" catalog="system" width="128" height="93"/>
         <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>

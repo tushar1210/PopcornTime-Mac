@@ -8,13 +8,17 @@
 
 import UIKit
 
+protocol EpisodeDelegate : class {
+    func didRequestDownload(episode: Episode)
+    func didRequestStream(episode: Episode)
+}
+
 class EpisodeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subtitle: UILabel!
-    var season : Int?
-    var episode : Int?
-    var episodeTitle : String?
+    var episode : Episode!
+    weak var delegate : EpisodeDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,4 +32,12 @@ class EpisodeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func downloadTapped(_ sender: Any) {
+        delegate?.didRequestDownload(episode: episode)
+    }
+    
+    
+    @IBAction func streamTapped(_ sender: Any) {
+        delegate?.didRequestStream(episode: episode)
+    }
 }

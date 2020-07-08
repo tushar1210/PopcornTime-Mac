@@ -59,7 +59,7 @@ class ShowDetailViewController: UIViewController {
     
 }
 
-extension ShowDetailViewController : UITableViewDelegate, UITableViewDataSource {
+extension ShowDetailViewController : UITableViewDelegate, UITableViewDataSource, EpisodeDelegate {
     
     func getEpisode(seasonNum: Int, episodeNum: Int) -> Episode? {
         return (show.episodes?.first(where: { (episode) -> Bool in
@@ -85,12 +85,13 @@ extension ShowDetailViewController : UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "episodeCell") as! EpisodeTableViewCell
         let currentSeason = seasons[indexPath.section]
-        let episodesThisSeason = episodes[indexPath.section]
+        let episodesThisSeason = episodes[indexPath.section].sorted()
         let currentEpisode = episodesThisSeason[indexPath.row]
-        print(currentSeason, currentEpisode)
         if let episode = getEpisode(seasonNum: currentSeason, episodeNum: currentEpisode) {
             cell.title.text = episode.title
             cell.subtitle.text = "Season \(episode.season ?? 0) Episode \(episode.episode ?? 0)"
+            cell.episode = episode
+            cell.delegate = self
         }
         
         return cell
@@ -115,6 +116,36 @@ extension ShowDetailViewController : UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
+    }
+    
+    func didRequestStream(episode: Episode) {
+        print("Requested Stream")
+        print(episode.torrents?.keys)
+        var selectedQuality = String()
+        let alert = UIAlertController(title: episode.title, message: "Select a quality", preferredStyle: .alert)
+        if let keys = episode.torrents?.keys {
+            for key in keys {
+                if key == "0" {
+                    alert.addAction(UIAlertAction(title: "Undefined", style: .default, handler: { (action) in
+                        selectedQuality = key
+                    }))
+                }
+                else {
+                    alert.addAction(UIAlertAction(title: key, style: .default, handler: { (action) in
+                        selectedQuality = key
+                    }))
+                }
+            }
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+        //TODO :- Stream Torrents
+    }
+    
+    func didRequestDownload(episode: Episode) {
+        print("Requested Download")
+        print(episode.torrents?.keys)
+        //TODO :- Download Torrents
     }
     
 }
