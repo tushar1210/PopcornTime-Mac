@@ -136,7 +136,6 @@ extension ShowDetailViewController : UITableViewDelegate, UITableViewDataSource,
     
     func didRequestStream(episode: Episode) {
         print("Requested Stream")
-        print(episode.torrents?.keys)
         var selectedQuality = String()
         let alert = UIAlertController(title: episode.title, message: "Select a quality", preferredStyle: .alert)
         if let keys = episode.torrents?.keys {
@@ -160,7 +159,24 @@ extension ShowDetailViewController : UITableViewDelegate, UITableViewDataSource,
     
     func didRequestDownload(episode: Episode) {
         print("Requested Download")
-        print(episode.torrents?.keys)
+        var selectedQuality = String()
+        let alert = UIAlertController(title: episode.title, message: "Select a quality", preferredStyle: .alert)
+        if let keys = episode.torrents?.keys {
+            for key in keys {
+                if key == "0" {
+                    alert.addAction(UIAlertAction(title: "Undefined", style: .default, handler: { (action) in
+                        selectedQuality = key
+                    }))
+                }
+                else {
+                    alert.addAction(UIAlertAction(title: key, style: .default, handler: { (action) in
+                        selectedQuality = key
+                    }))
+                }
+            }
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
         //TODO :- Download Torrents
     }
     
