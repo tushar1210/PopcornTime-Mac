@@ -18,5 +18,3 @@ struct WatchListModel{
     var released: Int?
     var images: Images?
 }
-
-
