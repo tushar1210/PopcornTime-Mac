@@ -16,10 +16,12 @@ class ShowDetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var synopsisLabel: UILabel!
     @IBOutlet weak var episodesTableView: UITableView!
+    @IBOutlet weak var addToWatchButton: UIButton!
     
     var show = ShowDetail()
     var seasons = [Int]()
     var episodes = [[Int]]()
+    var isWatching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +58,20 @@ class ShowDetailViewController: UIViewController {
     @IBAction func backTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func addTapped(_ sender: Any) {
+        if isWatching {
+            addToWatchButton.setImage(UIImage(systemName: "plus"), for: .normal)
+            addToWatchButton.setTitle("   Add to Watchlist", for: .normal)
+            isWatching = false
+        }
+        else {
+            addToWatchButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
+            addToWatchButton.setTitle("   Added", for: .normal)
+            isWatching = true
+        }
+    }
+    
     
 }
 
