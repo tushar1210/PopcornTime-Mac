@@ -16,10 +16,12 @@ class ShowDetailViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var synopsisLabel: UILabel!
     @IBOutlet weak var episodesTableView: UITableView!
+    @IBOutlet weak var addToWatchButton: UIButton!
     
     var show = ShowDetail()
     var seasons = [Int]()
     var episodes = [[Int]]()
+    var isWatching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +58,20 @@ class ShowDetailViewController: UIViewController {
     @IBAction func backTapped(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func addTapped(_ sender: Any) {
+        if isWatching {
+            addToWatchButton.setImage(UIImage(systemName: "plus"), for: .normal)
+            addToWatchButton.setTitle("   Add to Watchlist", for: .normal)
+            isWatching = false
+        }
+        else {
+            addToWatchButton.setImage(UIImage(systemName: "checkmark"), for: .normal)
+            addToWatchButton.setTitle("   Added", for: .normal)
+            isWatching = true
+        }
+    }
+    
     
 }
 
@@ -120,7 +136,6 @@ extension ShowDetailViewController : UITableViewDelegate, UITableViewDataSource,
     
     func didRequestStream(episode: Episode) {
         print("Requested Stream")
-        print(episode.torrents?.keys)
         var selectedQuality = String()
         let alert = UIAlertController(title: episode.title, message: "Select a quality", preferredStyle: .alert)
         if let keys = episode.torrents?.keys {
@@ -144,7 +159,24 @@ extension ShowDetailViewController : UITableViewDelegate, UITableViewDataSource,
     
     func didRequestDownload(episode: Episode) {
         print("Requested Download")
-        print(episode.torrents?.keys)
+        var selectedQuality = String()
+        let alert = UIAlertController(title: episode.title, message: "Select a quality", preferredStyle: .alert)
+        if let keys = episode.torrents?.keys {
+            for key in keys {
+                if key == "0" {
+                    alert.addAction(UIAlertAction(title: "Undefined", style: .default, handler: { (action) in
+                        selectedQuality = key
+                    }))
+                }
+                else {
+                    alert.addAction(UIAlertAction(title: key, style: .default, handler: { (action) in
+                        selectedQuality = key
+                    }))
+                }
+            }
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
         //TODO :- Download Torrents
     }
     

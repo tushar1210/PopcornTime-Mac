@@ -527,6 +527,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lh4-qy-5zh">
+                                <rect key="frame" x="40" y="519" width="187" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fYh-Pg-7wv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="5" maxX="20" maxY="5"/>
+                                <state key="normal" title="   Add to Watchlist" image="plus" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="15" weight="semibold"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addTapped:" destination="nON-sS-CpH" eventType="touchUpInside" id="QfW-By-EJt"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPU-lZ-4cj">
                                 <rect key="frame" x="40" y="40" width="100" height="36"/>
                                 <constraints>
@@ -583,14 +605,15 @@
                             <constraint firstItem="Vhx-WR-5YB" firstAttribute="top" secondItem="oTQ-xG-TuU" secondAttribute="top" id="Tod-eQ-YsG"/>
                             <constraint firstAttribute="bottom" secondItem="Vhx-WR-5YB" secondAttribute="bottom" id="U1k-5i-4jX"/>
                             <constraint firstItem="fp2-Te-lBI" firstAttribute="leading" secondItem="vu7-up-otr" secondAttribute="leading" id="UGB-Di-oUw"/>
+                            <constraint firstItem="lh4-qy-5zh" firstAttribute="top" secondItem="fp2-Te-lBI" secondAttribute="bottom" constant="20" id="W2M-It-ukW"/>
                             <constraint firstAttribute="trailing" secondItem="Vhx-WR-5YB" secondAttribute="trailing" id="XwU-CR-TSz"/>
                             <constraint firstItem="Wf5-FZ-mbM" firstAttribute="leading" secondItem="X9d-u7-OJN" secondAttribute="trailing" constant="20" id="Y8N-Fu-cMY"/>
                             <constraint firstItem="vu7-up-otr" firstAttribute="width" secondItem="vu7-up-otr" secondAttribute="height" multiplier="2:3" id="acg-l9-9IQ"/>
                             <constraint firstItem="fp2-Te-lBI" firstAttribute="top" secondItem="8Sr-SR-2u2" secondAttribute="bottom" constant="30" id="d6D-IQ-xxk"/>
                             <constraint firstItem="cem-zQ-SGd" firstAttribute="top" secondItem="CWC-bS-t0e" secondAttribute="top" id="dCr-Dm-s8U"/>
+                            <constraint firstItem="oTQ-xG-TuU" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="lh4-qy-5zh" secondAttribute="bottom" constant="20" id="eNI-fa-T0h"/>
                             <constraint firstItem="vu7-up-otr" firstAttribute="leading" secondItem="oTQ-xG-TuU" secondAttribute="leading" constant="40" id="gXB-He-tnL"/>
                             <constraint firstItem="cPU-lZ-4cj" firstAttribute="top" secondItem="oTQ-xG-TuU" secondAttribute="top" constant="40" id="k17-wW-SxA"/>
-                            <constraint firstItem="oTQ-xG-TuU" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fp2-Te-lBI" secondAttribute="bottom" constant="20" id="lHH-SM-9rH"/>
                             <constraint firstItem="vu7-up-otr" firstAttribute="top" secondItem="cPU-lZ-4cj" secondAttribute="bottom" constant="30" id="llg-hJ-a7I"/>
                             <constraint firstItem="Vhx-WR-5YB" firstAttribute="bottom" secondItem="oTQ-xG-TuU" secondAttribute="bottom" id="ou9-Jy-JXD"/>
                             <constraint firstItem="8Sr-SR-2u2" firstAttribute="leading" secondItem="X9d-u7-OJN" secondAttribute="leading" id="qmL-Cb-qNN"/>
@@ -598,12 +621,14 @@
                             <constraint firstItem="cPU-lZ-4cj" firstAttribute="leading" secondItem="oTQ-xG-TuU" secondAttribute="leading" constant="40" id="rkw-vJ-Y41"/>
                             <constraint firstItem="fp2-Te-lBI" firstAttribute="leading" secondItem="vu7-up-otr" secondAttribute="leading" id="tjH-pO-Vut"/>
                             <constraint firstItem="Wf5-FZ-mbM" firstAttribute="top" secondItem="CWC-bS-t0e" secondAttribute="top" id="u4l-c9-qRj"/>
+                            <constraint firstItem="lh4-qy-5zh" firstAttribute="leading" secondItem="oTQ-xG-TuU" secondAttribute="leading" constant="40" id="utL-jI-Mnr"/>
                             <constraint firstItem="Wf5-FZ-mbM" firstAttribute="width" secondItem="CWC-bS-t0e" secondAttribute="width" multiplier="0.5" id="vrz-vQ-KxN"/>
                             <constraint firstAttribute="trailing" secondItem="Wf5-FZ-mbM" secondAttribute="trailing" id="zw5-G4-hg1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oTQ-xG-TuU"/>
                     </view>
                     <connections>
+                        <outlet property="addToWatchButton" destination="lh4-qy-5zh" id="OhB-GN-zJK"/>
                         <outlet property="episodesTableView" destination="Wf5-FZ-mbM" id="NHJ-Bm-EaJ"/>
                         <outlet property="showBanner" destination="cem-zQ-SGd" id="3nA-bb-82T"/>
                         <outlet property="showPoster" destination="vu7-up-otr" id="rCf-fT-DTH"/>
@@ -751,6 +776,7 @@
         <image name="icloud.and.arrow.down" catalog="system" width="128" height="112"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="play.rectangle.fill" catalog="system" width="128" height="93"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="square.and.arrow.down" catalog="system" width="121" height="128"/>
         <image name="tv" catalog="system" width="128" height="93"/>
     </resources>
